@@ -1,8 +1,6 @@
 import express from "express";
 
-const
-    app = express(),
-    router = express.Router();
+const app = express();
 
 app.use((_, response, next) => {
     response.header("Access-Control-Allow-Origin", "*");
@@ -10,9 +8,10 @@ app.use((_, response, next) => {
     next();
 });
 
-router.get("/", (_, response) => {
-    response.send("<p>Hello, world!</p>");
-});
+app.route("/")
+    .get((_, response) => {
+        response.send("<p>Hello, world!</p>");
+    });
 
 app.listen(8080, () => {
     console.log("Server listening on port", 8080);
