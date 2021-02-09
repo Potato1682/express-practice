@@ -1,9 +1,9 @@
 2. zstd
 3. ejs
 4. graphql
-5. nodemon
-6. pino (https://github.com/pinojs/pino/blob/HEAD/docs/web.md#express) (https://www.npmjs.com/package/@vrbo/pino-rotating-file) (https://github.com/ptkdev/ptkdev-logger)
+5. webpack
 
 Done:
 1. router (https://qiita.com/pochopocho13/items/79a4735031ce11a91df7)
 6. CORS
+7. logger (https://github.com/ptkdev/ptkdev-logger)
