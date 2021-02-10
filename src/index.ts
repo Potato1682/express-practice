@@ -1,3 +1,4 @@
+import fs from "fs";
 import chalk from "chalk";
 import express from "express";
 import Logger from "@ptkdev/logger";
@@ -25,12 +26,13 @@ const main = async () => {
     });
 
     app.route("/")
-        .get((_, response) => {
+        .get((request, response) => {
+            logger.info("GET / from " + request.hostname);
             response.send("<p>Hello, world!</p>");
         });
 
-    app.listen(8080, () => {
-        logger.info("Server listening on port " + chalk.yellow(8080));
+    app.listen(6001, () => {
+        logger.info("Server listening on port " + chalk.yellow(6001));
     });
 };
 
