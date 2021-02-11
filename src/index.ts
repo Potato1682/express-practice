@@ -1,4 +1,3 @@
-import fs from "fs";
 import chalk from "chalk";
 import express from "express";
 import Logger from "@ptkdev/logger";
@@ -25,10 +24,15 @@ const main = async () => {
         next();
     });
 
+    app.set("view engine", "ejs");
+    app.set("views", "./src/views");
+
     app.route("/")
         .get((request, response) => {
             logger.info("GET / from " + request.hostname);
-            response.send("<p>Hello, world!</p>");
+            response.render("./index.ejs", {
+                title: "Hello, world!"
+            });
         });
 
     app.listen(6001, () => {
